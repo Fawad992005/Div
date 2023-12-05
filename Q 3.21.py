@@ -1,22 +1,23 @@
-def get_century(k):
-    return  k//100
-
-def get_dayofweek(k,m,q):
-    d = ['Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday']
-    h = (q + (26*(m+1)//10)+ k + (k//4) + (get_century(k)//4) + (5*get_century(k))) % 7
+def get_dayofweek(year,month,day):
+    d = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+    h = (day + (13 * (month + 1) // 5) + year + (year // 4) - (year // 100) + (year // 400)) % 7
     return d[h]
 
 
 
 for i in range(3):
     try:
-      k = int(input("Enter year: "))
-      m = int(input("Enter month: "))
-      q = int(input("Enter day of the month: "))
-      break
+      year = int(input("Enter year: "))
+      month = int(input("Enter month: "))
+      day = int(input("Enter day of the month(1-31): "))
+      if 1 <= day <= 31:
+        break
+      else:
+        print("Invalid day input, please try again.")
+        continue
     except ValueError:
         print("Wrong input ,Try again!!")
         continue
 
 
-print(get_dayofweek(k,m,q))
+print(get_dayofweek(year,month,day))
