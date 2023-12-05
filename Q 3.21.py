@@ -1,4 +1,8 @@
 def get_dayofweek(year,month,day):
+     # January and February are counted as months 13 and 14 of the previous year
+    if month < 3:
+        month += 12
+        year -= 1
     d = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
     h = (day + (13 * (month + 1) // 5) + year + (year // 4) - (year // 100) + (year // 400)) % 7
     return d[h]
