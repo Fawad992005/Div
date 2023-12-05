@@ -1,15 +1,17 @@
 #Function to find x
 def forx(li):
-     x = (li[4]*li[3]-li[1]*li[5])/(li[0]*li[3]-li[1]*li[2])
-     if li[0]*li[3]-li[1]*li[2] == 0:
+     denominator = li[0] * li[3] - li[1] * li[2]
+     if denominator == 0:
          return f"equation has no solution "
      else:
+         x = (li[4]*li[3]-li[1]*li[5])/denominator
          return x
 def fory(li):
-     y = (li[0]*li[5]-li[4]*li[2])/(li[0]*li[3]-li[1]*li[2])
-     if li[0]*li[3]-li[1]*li[2] == 0:
+     denominator = li[0] * li[3] - li[1] * li[2]
+     if denominator == 0:
           return f"equation has no solution "
      else:
+          y = (li[0]*li[5]-li[4]*li[2])/denominator
           return y
 for i in range(6):
     try:
