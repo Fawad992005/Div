@@ -8,14 +8,25 @@ def wind_temp(temp,speed):
 
 while True:
     try:
-      temp = float(input("Enter temperature in Farenheit between -58F and 48F: "))
-      speed = float(input("Enter Wind speed in miles per hour greater than  or equal to 2: "))
-      if -58 <= temp <= 48 and speed >= 2:
-         break
-      else:
-         print("Error!!!.Enter temperature and speed within given range.")
+        temp = float(input("Enter temperature in Fahrenheit between -58°F and 48°F: "))
+        if -58 <= temp <= 48:
+            break
+        else:
+            print("Error!!! Enter temperature within the given range.")
+            continue
+
     except ValueError:
-       print("Wrong input try again!")
+        print("Wrong input! Try again.")
+
+while True:
+    try:
+        speed = float(input("Enter wind speed in miles per hour, greater than or equal to 2: "))
+        if speed >= 2:
+            break
+        else:
+            print("Error!!! Enter speed within the given range.")
+    except ValueError:
+        print("Wrong input! Try again.")
 
 result = wind_temp(temp,speed)
 print(f"The wind chill index is {result:.2f}")
