@@ -22,6 +22,7 @@ while True:
     choose = input("Enter which book to choose or press 0 to exit: ")
     if choose in obj.books:
         print(f"{choose} is in the library")
+        break
     elif choose == "0":
         break
     else:
