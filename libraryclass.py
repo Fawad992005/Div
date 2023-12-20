@@ -20,10 +20,10 @@ while True:
 obj.showinfo()
 while True:
     choose = input("Enter which book to choose or press 0 to exit: ")
-    if choose in obj.books:
+    if choose.lower() in [book.lower() for book in obj.books]:
         print(f"{choose} is in the library")
         break
     elif choose == "0":
         break
     else:
-        print(f"{choose} is no in the library")
+        print(f"Sorry!,{choose} is no in the library")
